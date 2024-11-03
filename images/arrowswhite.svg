@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 398.2">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <g id="Capa_1">
+    <g id="swap-horiz">
+      <path class="cls-1" d="M113.8,170.7L0,284.4l113.8,113.8v-85.3h199.1v-56.9H113.8v-85.3ZM512,113.8L398.2,0v85.3h-199.1v56.9h199.1v85.3l113.8-113.7Z"/>
+    </g>
+  </g>
+</svg>
