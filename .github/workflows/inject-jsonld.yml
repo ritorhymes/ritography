@@ -1,0 +1,80 @@
+name: Inject JSON-LD into HTML Files
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write   # Grant write permission to the repository contents
+
+jobs:
+  inject-json-ld:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Check out the repository
+      - name: Check out repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0       # Fetch all history
+          fetch-tags: true     # Fetch all tags
+
+      # Step 2: Define files to process
+      - name: Define files to process
+        id: define_files
+        run: |
+          # List of base names (without .html or .json extensions)
+          FILES_TO_PROCESS="index photography-samples event-photography modeling video contact terms-of-service privacy-policy"
+
+          # Export the list of files to process as an environment variable
+          echo "FILES_TO_PROCESS=$FILES_TO_PROCESS" >> $GITHUB_ENV
+
+      # Step 3: Inject JSON-LD into HTML files
+      - name: Inject JSON-LD into HTML files
+        if: env.FILES_TO_PROCESS != ''
+        run: |
+          for base_name in $FILES_TO_PROCESS; do
+            html_file="${base_name}.html"
+            json_file="json-ld/${base_name}.json"
+
+            echo "Processing $html_file with $json_file"
+
+            # Check if the HTML file exists
+            if [ ! -f "$html_file" ]; then
+              echo "HTML file $html_file not found, skipping."
+              continue
+            fi
+
+            # Verify that the JSON-LD file exists
+            if [ ! -f "$json_file" ]; then
+              echo "$json_file not found, skipping injection."
+              continue
+            fi
+
+            # Use perl to perform the substitution
+            perl -0777 -i.bak -pe '
+              s|<script type="application/ld\+json" src="/json-ld/'"$base_name"'\.json"></script>|
+                my $json_ld_content = do { local $/; open my $fh, "<", "'"$json_file"'"; <$fh> };
+                $json_ld_content
+              |gse
+            ' "$html_file"
+
+            echo "Injected JSON-LD into $html_file"
+          done
+
+      # Step 4: Commit and push changes
+      - name: Commit and push changes
+        if: env.FILES_TO_PROCESS != ''
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+          # Check if there are changes
+          if git diff --quiet; then
+            echo "No changes to commit."
+          else
+            git add *.html
+            git commit -m "Inject JSON-LD into HTML files"
+            git push
+          fi
