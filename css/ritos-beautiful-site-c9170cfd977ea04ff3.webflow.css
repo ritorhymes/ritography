@@ -3,15 +3,6 @@
   --black: black;
 }
 
-.w-layout-grid {
-  grid-row-gap: 16px;
-  grid-column-gap: 16px;
-  grid-template-rows: auto auto;
-  grid-template-columns: 1fr 1fr;
-  grid-auto-columns: 1fr;
-  display: grid;
-}
-
 body {
   color: #1a1b1f;
   font-family: Montserrat, sans-serif;
@@ -2322,6 +2313,7 @@ figcaption {
   border-radius: 20px;
   margin-top: auto;
   margin-bottom: auto;
+  margin-left: 0;
   padding-top: 5px;
   padding-bottom: 5px;
   font-family: Unique, sans-serif;
@@ -2521,6 +2513,7 @@ figcaption {
 
 .heading-27 {
   color: #fff;
+  text-align: center;
   margin-bottom: 20px;
   margin-left: auto;
   margin-right: auto;
@@ -2565,6 +2558,7 @@ figcaption {
   width: 70%;
   margin-left: auto;
   margin-right: auto;
+  display: none;
 }
 
 .heading-28 {
@@ -2573,6 +2567,11 @@ figcaption {
   width: auto;
   margin-bottom: 20px;
   font-family: Unique, sans-serif;
+}
+
+.heading-28.modelling {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .youtube {
@@ -2928,6 +2927,7 @@ figcaption {
 .heading-31 {
   color: #fff;
   text-align: center;
+  margin-top: 5%;
   margin-bottom: 5%;
 }
 
@@ -3058,6 +3058,8 @@ figcaption {
   padding-left: 20%;
   padding-right: 20%;
   font-family: Unique, sans-serif;
+  font-size: 20px;
+  line-height: 40px;
 }
 
 .heading-32 {
@@ -3159,7 +3161,7 @@ figcaption {
   text-align: center;
 }
 
-.div-block-69 {
+.intro {
   color: #f61718;
   margin-bottom: 10%;
   display: block;
@@ -3813,6 +3815,8 @@ figcaption {
   text-align: center;
   align-self: center;
   margin-top: 0;
+  font-size: 44px;
+  line-height: 62px;
 }
 
 .div-block-85, .div-block-86, .div-block-87, .div-block-88, .div-block-89, .div-block-90 {
@@ -3873,7 +3877,7 @@ figcaption {
 
 .paragraph-30 {
   color: #fff;
-  text-align: left;
+  text-align: center;
   align-self: center;
 }
 
@@ -4789,7 +4793,7 @@ figcaption {
 
 .paragraph-39 {
   color: #fff;
-  text-align: justify;
+  text-align: center;
   align-self: center;
   margin-bottom: 2%;
   padding-left: 20%;
@@ -7857,6 +7861,7 @@ figcaption {
 
 .fashionshowsample2 {
   text-align: left;
+  object-fit: cover;
   border-radius: 40px;
   height: 650px;
   margin-left: auto;
@@ -8455,6 +8460,42 @@ figcaption {
 
 .logo-link-block.w--current {
   margin-left: 0;
+}
+
+.list-2 {
+  grid-column-gap: 16px;
+  grid-row-gap: 16px;
+  grid-template-rows: auto auto;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-columns: 1fr;
+  width: 70%;
+  margin: 0 auto;
+  padding-left: 0;
+  list-style-type: none;
+  display: grid;
+}
+
+.figure {
+  height: 50%;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.introduction {
+  flex-flow: column;
+  display: flex;
+}
+
+.div-block-156 {
+  flex-flow: column;
+  align-items: center;
+  display: flex;
+}
+
+.figure-3 {
+  margin-top: 0;
+  padding-bottom: 0;
 }
 
 @media screen and (max-width: 991px) {
@@ -9154,6 +9195,10 @@ figcaption {
     margin-bottom: 20%;
   }
 
+  .image-102, .slider-12, .image-103 {
+    width: auto;
+  }
+
   .fashionshowsample1 {
     object-fit: contain;
   }
@@ -9643,6 +9688,13 @@ figcaption {
 
   .logo1, .logo-wide {
     margin-left: 10%;
+  }
+
+  .figure-2 {
+    margin-top: 0;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 0;
   }
 }
 
@@ -11152,6 +11204,10 @@ figcaption {
     margin-bottom: 15%;
   }
 
+  .heading-27 {
+    text-align: center;
+  }
+
   .grid-5 {
     grid-column-gap: 76px;
     grid-row-gap: 76px;
@@ -11552,6 +11608,8 @@ figcaption {
 
   .paragraph-23 {
     text-align: justify;
+    padding-left: 0%;
+    padding-right: 0%;
   }
 
   .logohero {
@@ -11626,14 +11684,10 @@ figcaption {
     padding-bottom: 10px;
   }
 
-  .paragraph-26 {
+  .paragraph-26, .heading-41 {
     margin-bottom: 5%;
     padding-left: 5%;
     padding-right: 5%;
-  }
-
-  .heading-41 {
-    margin-bottom: 5%;
   }
 
   .div-block-70 {
@@ -11755,6 +11809,11 @@ figcaption {
     width: 100%;
   }
 
+  .paragraph-28 {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+
   .div-block-91 {
     grid-column-gap: 200px;
     grid-row-gap: 200px;
@@ -11817,6 +11876,9 @@ figcaption {
     flex-flow: wrap;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
     display: flex;
   }
 
@@ -13240,15 +13302,19 @@ figcaption {
   place-self: center;
 }
 
-#w-node-a11e14e7-ecd6-8b40-d946-6709bebaff04-67bb6258 {
+#w-node-_19f41d9d-98ff-352a-7580-016b50ad318b-67bb6258 {
   align-self: center;
 }
 
-#w-node-a11e14e7-ecd6-8b40-d946-6709bebaff06-67bb6258 {
+#w-node-_5b5bf680-822d-372a-2a86-ab72e674a63e-67bb6258 {
+  grid-area: 3 / 1 / 4 / 3;
+}
+
+#w-node-_52f6a15b-cba3-66a7-c89e-d72d78156607-67bb6258 {
   grid-area: span 1 / span 2 / span 1 / span 2;
 }
 
-#w-node-_7b209e64-a667-4a9d-976e-3d96f7f720f2-67bb6281 {
+#w-node-e5adf329-6472-6ea1-6414-ec2aa75b2359-67bb6281 {
   grid-area: span 1 / span 1 / span 1 / span 1;
 }
 
