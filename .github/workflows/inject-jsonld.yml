@@ -20,12 +20,30 @@ jobs:
           fetch-depth: 0       # Fetch all history
           fetch-tags: true     # Fetch all tags
 
-      # Step 2: Define files to process
-      - name: Define files to process
-        id: define_files
+      # Step 2: Find HTML files to process
+      - name: Find HTML files to process
+        id: find_html_files
         run: |
-          # List of base names (without .html or .json extensions)
-          FILES_TO_PROCESS="index photography-samples event-photography modeling video contact terms-of-service privacy-policy"
+          # Initialize an empty variable to hold the list of files to process
+          FILES_TO_PROCESS=""
+
+          # Loop over all JSON-LD files in the json-ld directory
+          for json_file in json-ld/*.json; do
+            # Get the base name without directory and extension
+            base_name=$(basename "$json_file" .json)
+
+            # Construct the corresponding HTML file name
+            html_file="${base_name}.html"
+
+            # Check if the HTML file exists
+            if [ -f "$html_file" ]; then
+              echo "Found HTML file: $html_file corresponding to $json_file"
+              # Add the base name to the list
+              FILES_TO_PROCESS="$FILES_TO_PROCESS $base_name"
+            else
+              echo "HTML file $html_file not found, skipping."
+            fi
+          done
 
           # Export the list of files to process as an environment variable
           echo "FILES_TO_PROCESS=$FILES_TO_PROCESS" >> $GITHUB_ENV
@@ -40,12 +58,6 @@ jobs:
 
             echo "Processing $html_file with $json_file"
 
-            # Check if the HTML file exists
-            if [ ! -f "$html_file" ]; then
-              echo "HTML file $html_file not found, skipping."
-              continue
-            fi
-
             # Verify that the JSON-LD file exists
             if [ ! -f "$json_file" ]; then
               echo "$json_file not found, skipping injection."
@@ -53,12 +65,12 @@ jobs:
             fi
 
             # Use perl to perform the substitution
-            perl -0777 -i.bak -pe '
-              s|<script type="application/ld\+json" src="/json-ld/'"$base_name"'\.json"></script>|
-                my $json_ld_content = do { local $/; open my $fh, "<", "'"$json_file"'"; <$fh> };
-                $json_ld_content
+            perl -0777 -i.bak -pe "
+              s|<script type=\"application/ld\\+json\" src=\"/json-ld/${base_name}\\.json\"></script>|
+                my \$json_ld_content = do { local \$/; open my \$fh, '<', '${json_file}'; <\$fh> };
+                \$json_ld_content
               |gse
-            ' "$html_file"
+            " "$html_file"
 
             echo "Injected JSON-LD into $html_file"
           done
