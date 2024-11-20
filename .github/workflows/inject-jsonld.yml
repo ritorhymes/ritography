@@ -28,7 +28,7 @@ jobs:
           FILES_TO_PROCESS=""
 
           # List of specific base names to process
-          BASE_NAMES="index photography-samples event-photography modeling video contact terms-of-service privacy-policy"
+          BASE_NAMES="index about photography-samples event-photography modeling video contact terms-of-service privacy-policy"
 
           # Loop over each base name
           for base_name in $BASE_NAMES; do
