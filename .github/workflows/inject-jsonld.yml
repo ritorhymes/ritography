@@ -1,4 +1,4 @@
-name: Inject JSON-LD into HTML Files
+name: Inject JSON-LD into HTML Files and Replace Relative Links
 
 on:
   push:
@@ -27,13 +27,13 @@ jobs:
           # Initialize an empty variable to hold the list of files to process
           FILES_TO_PROCESS=""
 
-          # Loop over all JSON-LD files in the json-ld directory
-          for json_file in json-ld/*.json; do
-            # Get the base name without directory and extension
-            base_name=$(basename "$json_file" .json)
+          # List of specific base names to process
+          BASE_NAMES="index photography-samples event-photography modeling video contact terms-of-service privacy-policy"
 
-            # Construct the corresponding HTML file name
+          # Loop over each base name
+          for base_name in $BASE_NAMES; do
             html_file="${base_name}.html"
+            json_file="json-ld/${base_name}.json"
 
             # Check if the HTML file exists
             if [ -f "$html_file" ]; then
@@ -65,19 +65,34 @@ jobs:
             fi
 
             # Use perl to perform the substitution
-            perl -0777 -i.bak -pe "
-              s|<script type=\"application/ld\\+json\" src=\"/json-ld/${base_name}\\.json\"></script>|
-                my \$json_ld_content = do { local \$/; open my \$fh, '<', '${json_file}'; <\$fh> };
-                \$json_ld_content
+            perl -0777 -i.bak -pe '
+              s|<script type="application/ld\+json" src="/json-ld/'"$base_name"'\.json"></script>|
+                my $json_ld_content = do { local $/; open my $fh, "<", "'"$json_file"'"; <$fh> };
+                $json_ld_content
               |gse
-            " "$html_file"
+            ' "$html_file"
 
             echo "Injected JSON-LD into $html_file"
           done
 
-      # Step 4: Commit and push changes
+      # Step 4: Replace relative links with absolute links
+      - name: Replace relative links with absolute links
+        run: |
+          for html_file in *.html; do
+            echo "Processing $html_file for relative links"
+
+            # Use perl to replace href="page.html" with href="https://ritography.com[/page]"
+            perl -i.bak -pe '
+              s|href="([^"]+)\.html"|
+                "href=\"https://ritography.com" . ($1 eq "index" ? "" : "/$1") . "\""
+              |ge
+            ' "$html_file"
+
+            echo "Replaced relative links in $html_file"
+          done
+
+      # Step 5: Commit and push changes
       - name: Commit and push changes
-        if: env.FILES_TO_PROCESS != ''
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
@@ -87,6 +102,6 @@ jobs:
             echo "No changes to commit."
           else
             git add *.html
-            git commit -m "Inject JSON-LD into HTML files"
+            git commit -m "Inject JSON-LD and replace relative links with absolute links"
             git push
           fi
