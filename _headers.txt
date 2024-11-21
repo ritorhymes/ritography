@@ -2,5 +2,5 @@ https://ritography.pages.dev/*
   X-Robots-Tag: noindex
 
 https://ritography.com/*
-  Content-Security-Policy: default-src 'self'; frame-ancestors 'self' https://ritorhymes.com https://ritovision.com;
+  Content-Security-Policy: default-src *; frame-ancestors 'self' https://ritovision.com https://ritorhymes.com;
   Referrer-Policy: unsafe-url
