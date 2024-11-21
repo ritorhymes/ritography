@@ -54,6 +54,11 @@
     "sameAs": [
       "https://instagram.com/ritorhymes",
       "https://ritovision.com/about",
+      "https://hackernoon.com/about/ritorhymes",
+      "https://facebook.com/ritorhymes",
+"https://www.youtube.com/@ritorhymes",
+"https://open.spotify.com/artist/03iaQJsc1704Mbj25dHp4Q",
+"https://music.apple.com/us/artist/rito-rhymes/1633458672",
       "https://ritography.com/about"
     ]
   },
@@ -74,6 +79,7 @@
     "sameAs": [
       "https://instagram.com/ritorhymes",
       "https://ritovision.com/about",
+      "https://hackernoon.com/about/ritorhymes",
       "https://ritography.com/about"
     ]
   },
@@ -95,6 +101,7 @@
     "sameAs": [
       "https://instagram.com/ritorhymes",
       "https://ritovision.com/about",
+      "https://hackernoon.com/about/ritorhymes",
       "https://ritography.com/about"
     ]
   },
@@ -130,11 +137,11 @@
       "KEKEBRATE (One More Meme)",
       "One More Meme (KEKEBRATE Remix)"
     ],
-    "url": "https://tokenscan.io/asset/kekebrate.amc",
+    "url": "https://music.apple.com/us/album/kekebrate-one-more-meme-single/1654151315",
     "@id": "https://tokenscan.io/asset/kekebrate.amc",
     "sameAs": [
       "https://bassmint.wtf/series/genesis/kekebrate/",
-      "https://www.youtube.com/playlist?list=OLAK5uy_nNxy-J_oL7jXCsMk3NtPC-2OvtlLCQ--c"
+      "https://open.spotify.com/track/5bB4OqM2Ko964pdFWORc9t"
     ],
     "lyricist": {
       "@type": "Person",
@@ -175,6 +182,11 @@
     "sameAs": [
       "https://instagram.com/ritorhymes",
       "https://ritovision.com/about",
+      "https://facebook.com/ritorhymes",
+"https://www.youtube.com/@ritorhymes",
+"https://open.spotify.com/artist/03iaQJsc1704Mbj25dHp4Q",
+"https://music.apple.com/us/artist/rito-rhymes/1633458672",
+      "https://hackernoon.com/about/ritorhymes",
       "https://ritography.com/about"
     ]
   },
@@ -243,6 +255,7 @@
       "sameAs": [
         "https://instagram.com/ritorhymes",
         "https://ritovision.com/about",
+        "https://hackernoon.com/about/ritorhymes",
         "https://ritography.com/about"
       ]
     },
@@ -763,6 +776,12 @@
           "@id": "https://ritovision.com/about",
           "name": "Rito",
           "url": "https://ritovision.com/about",
+          "sameAs": [
+            "https://facebook.com/ritorhymes",
+            "https://www.youtube.com/@ritorhymes",
+            "https://open.spotify.com/artist/03iaQJsc1704Mbj25dHp4Q",
+            "https://music.apple.com/us/artist/rito-rhymes/1633458672"
+          ],
           "hasOccupation": [
             {
               "@type": "Occupation",

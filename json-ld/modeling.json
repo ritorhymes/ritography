@@ -49,6 +49,11 @@
     "description": "Rito is a multi-disciplinary creative and visionary known for his work in modeling, cosplay, and artistic expression.",
     "sameAs": [
       "https://ritovision.com/about",
+      "https://hackernoon.com/about/ritorhymes",
+      "https://facebook.com/ritorhymes",
+"https://www.youtube.com/@ritorhymes",
+"https://open.spotify.com/artist/03iaQJsc1704Mbj25dHp4Q",
+"https://music.apple.com/us/artist/rito-rhymes/1633458672",
       "https://ritography.com/about"
     ],
     "@id": "https://ritovision.com/about",
@@ -79,6 +84,11 @@
         "description": "Rito is a multi-disciplinary creative and visionary known for his work in modeling, cosplay, and artistic expression.",
         "sameAs": [
           "https://ritovision.com/about",
+          "https://hackernoon.com/about/ritorhymes",
+          "https://facebook.com/ritorhymes",
+"https://www.youtube.com/@ritorhymes",
+"https://open.spotify.com/artist/03iaQJsc1704Mbj25dHp4Q",
+"https://music.apple.com/us/artist/rito-rhymes/1633458672",
           "https://ritography.com/about"
         ],
         "@id": "https://ritovision.com/about",
