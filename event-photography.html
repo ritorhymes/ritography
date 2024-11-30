@@ -24,6 +24,29 @@
   <link href="images/favicon.png" rel="shortcut icon" type="image/x-icon">
   <link href="images/webclip.png" rel="apple-touch-icon">
   <link href="https://ritography.com/event-photography" rel="canonical">
+
+<script>
+gsap.to(".footer-fixed-menu", {
+  y: "-100vh", // Move out of view
+  scrollTrigger: {
+    trigger: ".master-container",   // The trigger element
+    start: "1% top",                // Start at 1% scroll
+    end: "2% top",                  // End at 2% scroll
+    scrub: true,                    // Sync with scroll progress
+  },
+});
+
+gsap.to(".footer-fixed-menu", {
+  y: "0vh", // Bring back into view
+  scrollTrigger: {
+    trigger: ".master-container",   // The same trigger element
+    start: "99% top",               // Start at 99% scroll
+    end: "100% top",                // End at 100% scroll
+    scrub: true,                    // Sync with scroll progress
+  },
+});
+</script>
+
   <style>
     @media (min-width: 479px) {
         /* Apply custom scrollbar styling only to html */
