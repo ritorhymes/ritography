@@ -25,24 +25,31 @@
   <link href="images/webclip.png" rel="apple-touch-icon">
   <link href="https://ritography.com/event-photography" rel="canonical">
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
 <script>
+// Load GSAP and ScrollTrigger
+gsap.registerPlugin(ScrollTrigger);
+
+// Animation for the footer-fixed-menu
 gsap.to(".footer-fixed-menu", {
-  y: "-100vh", // Move out of view
+  y: "-100vh",
   scrollTrigger: {
-    trigger: ".master-container",   // The trigger element
-    start: "1% top",                // Start at 1% scroll
-    end: "2% top",                  // End at 2% scroll
-    scrub: true,                    // Sync with scroll progress
+    trigger: ".master-container",
+    start: "1% top",
+    end: "2% top",
+    scrub: true,
   },
 });
 
 gsap.to(".footer-fixed-menu", {
-  y: "0vh", // Bring back into view
+  y: "0vh",
   scrollTrigger: {
-    trigger: ".master-container",   // The same trigger element
-    start: "99% top",               // Start at 99% scroll
-    end: "100% top",                // End at 100% scroll
-    scrub: true,                    // Sync with scroll progress
+    trigger: ".master-container",
+    start: "99% top",
+    end: "100% top",
+    scrub: true,
   },
 });
 </script>
