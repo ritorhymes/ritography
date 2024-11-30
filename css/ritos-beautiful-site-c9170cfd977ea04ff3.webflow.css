@@ -5603,8 +5603,7 @@ figcaption {
 
 .footer-dropdown.w--current {
   color: #fff;
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
+  border-radius: 0;
 }
 
 .footer-dropdown.w--current:hover {
