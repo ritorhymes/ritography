@@ -25,6 +25,31 @@
   <link href="images/webclip.png" rel="apple-touch-icon">
   <link href="https://ritography.com/event-photography" rel="canonical">
 
+<script>
+    function forceLoadImages(containerClass, delay) {
+        const container = document.querySelector(containerClass);
+
+        if (container) {
+            setTimeout(() => {
+                // Find all <img> elements inside the container
+                const images = container.querySelectorAll('img');
+
+                images.forEach(img => {
+                    // Check if the image hasn't loaded or is still lazy-loaded
+                    if (!img.complete || img.loading === 'lazy') {
+                        // Assign the actual source
+                        img.src = img.src || img.dataset.src;
+                        // Remove lazy-loading attribute if present
+                        img.removeAttribute('loading');
+                    }
+                });
+            }, delay);
+        }
+    }
+
+    // Trigger force loading for all images in `.master-container` after 2 seconds
+    forceLoadImages('.master-container', 2000);
+</script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
