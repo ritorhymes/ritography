@@ -26,29 +26,33 @@
   <link href="https://ritography.com/event-photography" rel="canonical">
 
 <script>
-    function forceLoadImages(containerClass, delay) {
-        const container = document.querySelector(containerClass);
-
-        if (container) {
-            setTimeout(() => {
-                // Find all <img> elements inside the container
-                const images = container.querySelectorAll('img');
-
-                images.forEach(img => {
-                    // Check if the image hasn't loaded or is still lazy-loaded
-                    if (!img.complete || img.loading === 'lazy') {
-                        // Assign the actual source
-                        img.src = img.src || img.dataset.src;
-                        // Remove lazy-loading attribute if present
-                        img.removeAttribute('loading');
-                    }
-                });
-            }, delay);
-        }
+setTimeout(() => {
+  // Trigger lazy loading for images
+  document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+    if (!img.complete) {
+      img.loading = 'eager'; // Change loading attribute to eager
+      img.src = img.src; // Force the browser to reload the image
     }
+  });
 
-    // Trigger force loading for all images in `.master-container` after 2 seconds
-    forceLoadImages('.master-container', 1000);
+  // Trigger lazy loading for iframes
+  document.querySelectorAll('iframe[loading="lazy"]').forEach(iframe => {
+    iframe.loading = 'eager'; // Change loading attribute to eager
+    iframe.src = iframe.src; // Force the browser to reload the iframe
+  });
+
+  // Manually trigger IntersectionObservers (if used)
+  if (window.IntersectionObserver) {
+    document.querySelectorAll('*').forEach(element => {
+      // Simulate element visibility by calling lazy-load callbacks manually
+      const observerEvent = new Event('lazybeforeunveil', { bubbles: true });
+      element.dispatchEvent(observerEvent);
+    });
+  }
+
+  console.log('Forced lazy-loaded elements to load.');
+}, 1000);
+
 </script>
 
 <script>
