@@ -4051,6 +4051,7 @@ figcaption {
   text-align: center;
   display: flex;
 justify-content: center;
+ align-items: center;
 }
 
 .tab-link-tab-4-2 {
