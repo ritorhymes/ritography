@@ -4049,6 +4049,7 @@ figcaption {
 
 .tabs-menu-6 {
   text-align: center;
+  display: flex;
 }
 
 .tab-link-tab-4-2 {
