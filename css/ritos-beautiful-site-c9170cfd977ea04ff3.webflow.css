@@ -82,6 +82,7 @@ a:active {
 
 a.w--current {
   border-radius: 40px;
+  margin-left: auto;
 }
 
 ul {
@@ -4048,9 +4049,9 @@ figcaption {
 
 .tabs-menu-6 {
   text-align: center;
+  justify-content: center;
+  align-items: center;
   display: flex;
-justify-content: center;
- align-items: center;
 }
 
 .tab-link-tab-4-2 {
@@ -4070,6 +4071,7 @@ justify-content: center;
   background-color: #000;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
+  margin-left: 0;
 }
 
 .tab-link-tab-1-4 {
@@ -11895,7 +11897,6 @@ justify-content: center;
   .tab-link-tab-4-2.w--current {
     background-color: #000;
     margin-left: 0;
-margin-right: 0;
   }
 
   .tab-link-tab-1-4 {

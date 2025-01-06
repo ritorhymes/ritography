@@ -1,4 +1,4 @@
-<!DOCTYPE html><!--  Last Published: Sun Dec 01 2024 00:38:59 GMT+0000 (Coordinated Universal Time)  -->
+<!DOCTYPE html><!--  Last Published: Mon Jan 06 2025 09:36:59 GMT+0000 (Coordinated Universal Time)  -->
 <html data-wf-page="67079d0b7119b68567bb6283" data-wf-site="67079d0b7119b68567bb6200">
 <head>
   <meta charset="utf-8">
@@ -24,107 +24,6 @@
   <link href="images/favicon.png" rel="shortcut icon" type="image/x-icon">
   <link href="images/webclip.png" rel="apple-touch-icon">
   <link href="https://ritography.com/event-photography" rel="canonical">
-
-<script>
-setTimeout(() => {
-  // Trigger lazy loading for images
-  document.querySelectorAll('img[loading="lazy"]').forEach(img => {
-    if (!img.complete) {
-      img.loading = 'eager'; // Change loading attribute to eager
-      img.src = img.src; // Force the browser to reload the image
-    }
-  });
-
-  // Trigger lazy loading for iframes
-  document.querySelectorAll('iframe[loading="lazy"]').forEach(iframe => {
-    iframe.loading = 'eager'; // Change loading attribute to eager
-    iframe.src = iframe.src; // Force the browser to reload the iframe
-  });
-
-  // Manually trigger IntersectionObservers (if used)
-  if (window.IntersectionObserver) {
-    document.querySelectorAll('*').forEach(element => {
-      // Simulate element visibility by calling lazy-load callbacks manually
-      const observerEvent = new Event('lazybeforeunveil', { bubbles: true });
-      element.dispatchEvent(observerEvent);
-    });
-  }
-
-  console.log('Forced lazy-loaded elements to load.');
-}, 1000);
-
-</script>
-
-<script>
-function scrollToSection(targetId) {
-    const target = document.querySelector(targetId);
-
-    if (!target) return; // Ensure the target exists
-
-    const scrollInterval = setInterval(() => {
-        const targetPosition = target.getBoundingClientRect().top + window.scrollY;
-        const currentScroll = window.scrollY;
-        const distance = Math.abs(currentScroll - targetPosition);
-
-        // Stop adjusting if the target is very close or fully visible
-        if (distance < 5 || isElementInView(target)) {
-            clearInterval(scrollInterval);
-        } else {
-            window.scrollTo({
-                top: targetPosition,
-                behavior: 'smooth',
-            });
-        }
-    }, 100); // Adjust interval frequency as needed
-}
-
-// Check if an element is in the viewport
-function isElementInView(el) {
-    const rect = el.getBoundingClientRect();
-    return (
-        rect.top >= 0 &&
-        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
-    );
-}
-
-// Attach click event to menu links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        scrollToSection(this.getAttribute('href'));
-    });
-});
-        </script>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-  
-  <script>
-  // Load GSAP and ScrollTrigger
-  gsap.registerPlugin(ScrollTrigger);
-  
-  // Animation for the footer-fixed-menu
-  gsap.to(".footer-fixed-menu", {
-    y: "-100vh",
-    scrollTrigger: {
-      trigger: ".master-container",
-      start: "1% top",
-      end: "2% top",
-      scrub: true,
-    },
-  });
-  
-  gsap.to(".footer-fixed-menu", {
-    y: "0vh",
-    scrollTrigger: {
-      trigger: ".master-container",
-      start: "99% top",
-      end: "100% top",
-      scrub: true,
-    },
-  });
-  </script>
-
   <style>
     @media (min-width: 479px) {
         /* Apply custom scrollbar styling only to html */
@@ -147,280 +46,105 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     }
 </style>
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://ritography.com"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Event Photography",
-      "item": "https://ritography.com/event-photography"
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script>
+// Load GSAP and ScrollTrigger
+gsap.registerPlugin(ScrollTrigger);
+// Animation for the footer-fixed-menu
+gsap.to(".footer-fixed-menu", {
+  y: "-100vh",
+  scrollTrigger: {
+    trigger: ".master-container",
+    start: "1% top",
+    end: "2% top",
+    scrub: true,
+  },
+});
+gsap.to(".footer-fixed-menu", {
+  y: "0vh",
+  scrollTrigger: {
+    trigger: ".master-container",
+    start: "99% top",
+    end: "100% top",
+    scrub: true,
+  },
+});
+</script>
+  <script>
+setTimeout(() => {
+  // Trigger lazy loading for images
+  document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+    if (!img.complete) {
+      img.loading = 'eager'; // Change loading attribute to eager
+      img.src = img.src; // Force the browser to reload the image
     }
-  ]
-}
-</script>
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "Event Photography",
-  "url": "https://ritography.com/event-photography",
-  "description": "Discover our event photography services, capturing memorable moments with a unique backstage perspective.",
-  "speakable": {
-    "@type": "SpeakableSpecification",
-    "cssSelector": [
-      ".mastercontainer",
-      ".Section-Overview",
-      ".event-introduction",
-      ".Rito-Backstage-Photography"
-    ]
+  });
+  // Trigger lazy loading for iframes
+  document.querySelectorAll('iframe[loading="lazy"]').forEach(iframe => {
+    iframe.loading = 'eager'; // Change loading attribute to eager
+    iframe.src = iframe.src; // Force the browser to reload the iframe
+  });
+  // Manually trigger IntersectionObservers (if used)
+  if (window.IntersectionObserver) {
+    document.querySelectorAll('*').forEach(element => {
+      // Simulate element visibility by calling lazy-load callbacks manually
+      const observerEvent = new Event('lazybeforeunveil', { bubbles: true });
+      element.dispatchEvent(observerEvent);
+    });
   }
-}
+  console.log('Forced lazy-loaded elements to load.');
+}, 1000);
 </script>
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "Asia Society Event Photography",
-  "url": "https://ritography.com/event-photography",
-  "@id": "https://ritography.com/event-photography",
-  "keywords": "Asia Society, Event Photography, Fashion Sustainability, Event Photography in New York, Fashion Ethics and Traditions, Sustainable Fashion Event, Asia Society Sustainability, Backstage photography",
-  "mainEntity": {
-    "@type": "PhotographAction",
-    "agent": {
-      "@type": "Person",
-      "name": "Rito",
-      "jobTitle": "Photographer",
-      "@id": "https://ritovision.com/about",
-      "url": "https://ritovision.com/about",
-      "sameAs": [
-        "https://instagram.com/ritorhymes",
-        "https://hackernoon.com/about/ritorhymes",
-        "https://facebook.com/ritorhymes",
-"https://www.youtube.com/@ritorhymes",
-"https://open.spotify.com/artist/03iaQJsc1704Mbj25dHp4Q",
-"https://music.apple.com/us/artist/rito-rhymes/1633458672",
-        "https://ritography.com/about"
-      ],
-      "image": "https://ritography.com/rito-picture.png"
-    },
-    "object": {
-      "@type": "Event",
-      "name": "Threads of Sustainability: Fashion, Ethics, Traditions and the Environment",
-      "description": "An evening of fashion as food for thought, featuring an insightful panel on sustainability, fashion, and the role of artisans and designers.",
-      "url": "https://asiasociety.org/new-york/events/threads-sustainability-fashion-ethics-traditions-and-environment",
-      "@id": "https://asiasociety.org/new-york/events/threads-sustainability-fashion-ethics-traditions-and-environment",
-      "keywords": "Asia Society, Event Photography, Fashion Sustainability, Event Photography in New York, Fashion Ethics and Traditions, Sustainable Fashion Event, Asia Society Sustainability, Backstage photography",
-      "startDate": "2024-09-05T00:00:00Z",
-      "endDate": "2024-09-05T23:59:59Z",
-      "eventStatus": "https://schema.org/EventScheduled",
-      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-      "location": {
-        "@type": "Place",
-        "name": "Asia Society",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "725 Park Avenue",
-          "addressLocality": "New York",
-          "addressRegion": "NY",
-          "postalCode": "10021",
-          "addressCountry": "US"
+  <script>
+function scrollToSection(targetId) {
+    const target = document.querySelector(targetId);
+    if (!target) return; // Ensure the target exists
+    const scrollInterval = setInterval(() => {
+        const targetPosition = target.getBoundingClientRect().top + window.scrollY;
+        const currentScroll = window.scrollY;
+        const distance = Math.abs(currentScroll - targetPosition);
+        // Stop adjusting if the target is very close or fully visible
+        if (distance < 5 || isElementInView(target)) {
+            clearInterval(scrollInterval);
+        } else {
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth',
+            });
         }
-      },
-      "organizer": [
-        {
-          "@type": "Organization",
-          "name": "Asia Society",
-          "url": "https://asiasociety.org/"
-        },
-        {
-          "@type": "Person",
-          "name": "Melissa Shea",
-          "jobTitle": "CEO",
-          "worksFor": {
-            "@type": "Organization",
-            "name": "Fashion Mingle",
-            "@id": "https://fashionmingle.com/",
-            "url": "https://fashionmingle.com/"
-          },
-          "@id": "https://www.linkedin.com/in/melissashea/",
-          "url": "https://www.linkedin.com/in/melissashea/",
-          "sameAs": "https://fashionmingle.com/about/melissashea/"
-        }
-      ],
-      "performer": [
-        {
-          "@type": "Person",
-          "name": "Carmen Artigas",
-          "jobTitle": [
-            "Climate-positive Fashion Consultant",
-            "Biocultural Researcher"
-          ],
-          "@id": "https://www.carmenartigas.com/",
-          "url": "https://www.carmenartigas.com/"
-        },
-        {
-          "@type": "Person",
-          "name": "Sandy Dalal",
-          "jobTitle": "Fashion Designer",
-          "@id": "https://www.instagram.com/sdalal/",
-          "url": "https://www.instagram.com/sdalal/",
-          "sameAs": [
-            "https://cfda.com/members/profile/sandy-dalal",
-            "https://nymag.com/metrotv/fff/designers/bios/sandydalal.htm"
-          ]
-        },
-        {
-          "@type": "Person",
-          "name": "Ajay Shrivastav",
-          "jobTitle": "Creative Director",
-          "@id": "https://www.instagram.com/ajaynyc27/",
-          "url": "https://www.instagram.com/ajaynyc27/",
-          "sameAs": ["https://www.linkedin.com/in/ajayshrivastav1"]
-        },
-        {
-          "@type": "Person",
-          "name": "Rachel Cooper",
-          "jobTitle": "Director of Performing Arts",
-          "@id": "https://en.wikipedia.org/wiki/Rachel_Cooper_(presenter)",
-          "url": "https://en.wikipedia.org/wiki/Rachel_Cooper_(presenter)",
-          "sameAs": ["https://www.linkedin.com/in/rachel-cooper-82372534"]
-        },
-        {
-          "@type": "Person",
-          "name": "Jeeno Joseph",
-          "jobTitle": "Dancer",
-          "@id": "https://www.instagram.com/jeeenoooo/?hl=en",
-          "url": "https://www.instagram.com/jeeenoooo/?hl=en",
-          "sameAs": [
-            "https://www.huffpost.com/entry/male-bharatanatyam-dancer_n_5d2f35f3e4b085eda5a55529",
-            "https://www.broadwayworld.com/india/article/Jeeno-Joseph-Performs-ANEKA-at-Akshara-Theatre-20230714"
-          ]
-        },
-        {
-          "@type": "Person",
-          "name": "Poonam Thimmaiah",
-          "jobTitle": "Jewelry Designer",
-          "@id": "https://maalicious.com/pages/about-us",
-          "url": "https://maalicious.com/pages/about-us",
-          "sameAs": [
-            "https://www.instagram.com/poonamthim/",
-            "https://www.linkedin.com/in/poonam-thimmaiah-024769bb"
-          ]
-        }
-      ],
-      "sponsor": [
-        {
-          "@type": "Organization",
-          "name": "Fempowerment Foundation",
-          "url": "https://fempowermentfoundation.org/",
-          "@id": "https://fempowermentfoundation.org/"
-        },
-        {
-          "@type": "Organization",
-          "name": "Jumptag Club",
-          "url": "https://jumptag.club",
-          "@id": "https://jumptag.club",
-          "sameAs": "https://instagram.com/jumptag"
-        },
-        {
-          "@type": "Organization",
-          "name": "Fashion Mingle",
-          "url": "https://fashionmingle.com/",
-          "@id": "https://fashionmingle.com/",
-          "sameAs": "https://instagram.com/fashionmingle"
-        },
-        {
-          "@type": "Organization",
-          "name": "Gingerblu",
-          "url": "https://www.gingerblu.com/",
-          "@id": "https://www.gingerblu.com/",
-          "sameAs": "https://www.instagram.com/gingerbluofficial/"
-        },
-        {
-          "@type": "Organization",
-          "name": "Maalicious Jewelry",
-          "url": "https://maalicious.com/",
-          "@id": "https://maalicious.com/",
-          "sameAs": "https://www.instagram.com/maaliciousjewelry/"
-        },
-        {
-          "@type": "Organization",
-          "name": "Krishna Mehta",
-          "url": "https://krishnamehta.com/",
-          "@id": "https://krishnamehta.com/",
-          "sameAs": [
-            "https://www.instagram.com/krishnamehtastudio",
-            "https://www.ensembleindia.com/designers/krishna-mehta.html"
-          ]
-        },
-        {
-          "@type": "Organization",
-          "name": "Anna Sui",
-          "url": "https://annasui.com/",
-          "@id": "https://annasui.com/",
-          "sameAs": [
-            "https://en.wikipedia.org/wiki/Anna_Sui",
-            "https://www.instagram.com/annasui"
-          ]
-        },
-        {
-          "@type": "Organization",
-          "name": "Marchesa",
-          "url": "https://www.marchesa.com",
-          "@id": "https://www.marchesa.com",
-          "sameAs": [
-            "https://en.wikipedia.org/wiki/Marchesa_(brand)",
-            "https://www.instagram.com/marchesafashion/?hl=en"
-          ]
-        },
-        {
-          "@type": "Organization",
-          "name": "Betsey Johnson",
-          "url": "https://betseyjohnson.com",
-          "@id": "https://betseyjohnson.com",
-          "sameAs": [
-            "https://en.wikipedia.org/wiki/Betsey_Johnson",
-            "https://www.instagram.com/betseyjohnson"
-          ]
-        },
-        {
-          "@type": "Organization",
-          "name": "Vani Hospitality",
-          "url": "https://vanihospitality.com/",
-          "@id": "https://vanihospitality.com/",
-          "sameAs": "https://www.instagram.com/vanihospitality/?hl=en"
-        }
-      ],
-      "image": "https://ritography.com/Asia-society-fashionshow.jpg"
-    }
-  }
+    }, 100); // Adjust interval frequency as needed
 }
-</script>
-
+// Check if an element is in the viewport
+function isElementInView(el) {
+    const rect = el.getBoundingClientRect();
+    return (
+        rect.top >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
+    );
+}
+// Attach click event to menu links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        scrollToSection(this.getAttribute('href'));
+    });
+});
+        </script>
+  <script type="application/ld+json" src="/json-ld/event-photography.json"></script>
 </head>
 <body class="body-9">
   <div data-animation="default" class="navbar-2 w-nav" data-easing2="ease" data-easing="ease" data-collapse="medium" data-w-id="e0bb648a-5d61-2b2a-3a6b-111f875cd43d" role="banner" data-no-scroll="1" data-duration="400" id="header">
-    <a id="w-node-e0bb648a-5d61-2b2a-3a6b-111f875cd43f-875cd43d" href="https://ritography.com" class="brand-3 w-nav-brand"><img src="images/ritography-logo-small-tm.png" loading="lazy" sizes="(max-width: 479px) 75vw, (max-width: 767px) 190px, (max-width: 991px) 200px, 15vw" srcset="images/ritography-logo-small-tm-p-500.png 500w, images/ritography-logo-small-tm-p-800.png 800w, images/ritography-logo-small-tm-p-1080.png 1080w, images/ritography-logo-small-tm-p-1600.png 1600w, images/ritography-logo-small-tm.png 1796w" alt="Ritography logo with red text and trademark symbol" class="image-89"></a>
+    <a id="w-node-e0bb648a-5d61-2b2a-3a6b-111f875cd43f-875cd43d" href="index.html" class="brand-3 w-nav-brand"><img src="images/ritography-logo-small-tm.png" loading="lazy" sizes="(max-width: 479px) 65vw, (max-width: 767px) 28vw, (max-width: 991px) 19vw, 15vw" srcset="images/ritography-logo-small-tm-p-500.png 500w, images/ritography-logo-small-tm-p-800.png 800w, images/ritography-logo-small-tm-p-1080.png 1080w, images/ritography-logo-small-tm-p-1600.png 1600w, images/ritography-logo-small-tm.png 1796w" alt="Ritography logo with red text and trademark symbol" class="image-89"></a>
     <div id="w-node-e0bb648a-5d61-2b2a-3a6b-111f875cd43e-875cd43d" class="container-10 w-container">
       <nav role="navigation" class="nav-menu-4 w-nav-menu">
         <div class="menu-button-3-copy w-nav-button"><img src="images/white-x-agency-fb.png" loading="lazy" data-w-id="439f39f0-1241-1cd9-f66d-7c1203414169" alt="a white X icon" class="image-287"></div>
         <div class="div-block-44">
-          <a href="https://ritography.com" class="nav-link w-nav-link">Home</a>
-          <a href="https://ritography.com/about" class="nav-link w-nav-link">About</a>
-          <a href="https://ritography.com/video" class="nav-link w-nav-link">Video</a>
-          <a href="https://ritography.com/modeling" class="nav-link w-nav-link">Modeling</a>
-          <a href="https://ritography.com/photography-samples" class="nav-link w-nav-link">Photography</a>
+          <a href="index.html" class="nav-link w-nav-link">Home</a>
+          <a href="about.html" class="nav-link w-nav-link">About</a>
+          <a href="video.html" class="nav-link w-nav-link">Video</a>
+          <a href="modeling.html" class="nav-link w-nav-link">Modeling</a>
+          <a href="photography-samples.html" class="nav-link w-nav-link">Photography</a>
           <div data-delay="0" data-hover="true" class="dropdown-cobrand-g w-dropdown">
             <div class="dropdown-cobrand-g1 w-dropdown-toggle">
               <div class="icon-9-copy w-icon-dropdown-toggle"></div>
@@ -459,7 +183,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       </div>
     </div>
     <nav id="w-node-a2c4ca0d-2ac0-9b3b-8c0f-9500c33b3277-875cd43d" class="div-block-154">
-      <a href="https://ritography.com/contact" class="navlink-block link-block-154 link-block-155 w-inline-block"><img src="images/email-icon.png" loading="lazy" alt="white envelope icon" class="image-280"></a>
+      <a href="contact.html" class="navlink-block link-block-154 link-block-155 w-inline-block"><img src="images/email-icon.png" loading="lazy" alt="white envelope icon" class="image-280"></a>
       <a href="https://modelmayhem.com/4327669" class="navlink-block w-inline-block"><img src="images/modelmayhem-logo-white.png" loading="lazy" alt="white Model Mayhem icon"></a>
       <a href="https://instagram.com/ritorhymes" class="navlink-block w-inline-block"><img src="images/instagram-white.png" loading="lazy" alt="white instagram icon"></a>
     </nav>
@@ -627,8 +351,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
               </div>
             </div>
             <div class="horizontalscroll1 ajay">
-              <div class="div-block-108-copy"></div>
-              <div class="div-block-108"></div>
               <div class="div-block-110"></div><img src="images/Rito---Gingerblu---9-5-24---textiles--1.JPG" loading="lazy" sizes="100vw" srcset="images/Rito---Gingerblu---9-5-24---textiles--1-p-500.jpg 500w, images/Rito---Gingerblu---9-5-24---textiles--1-p-800.jpg 800w, images/Rito---Gingerblu---9-5-24---textiles--1-p-1080.jpg 1080w, images/Rito---Gingerblu---9-5-24---textiles--1-p-1600.jpg 1600w, images/Rito---Gingerblu---9-5-24---textiles--1-p-2000.jpg 2000w, images/Rito---Gingerblu---9-5-24---textiles--1-p-2600.jpg 2600w, images/Rito---Gingerblu---9-5-24---textiles--1.JPG 3000w" alt="Ajay Shrivastav&#x27;s tapestries on display at Asia Society New York" class="image-219"><img src="images/Rito---Gingerblu---9-5-24---textiles--3.JPG" loading="lazy" sizes="100vw" srcset="images/Rito---Gingerblu---9-5-24---textiles--3-p-500.jpg 500w, images/Rito---Gingerblu---9-5-24---textiles--3-p-800.jpg 800w, images/Rito---Gingerblu---9-5-24---textiles--3-p-1080.jpg 1080w, images/Rito---Gingerblu---9-5-24---textiles--3-p-1600.jpg 1600w, images/Rito---Gingerblu---9-5-24---textiles--3-p-2000.jpg 2000w, images/Rito---Gingerblu---9-5-24---textiles--3-p-2600.jpg 2600w, images/Rito---Gingerblu---9-5-24---textiles--3.JPG 3000w" alt="Ajay Shrivastav&#x27;s tapestries laid out on display at Asia Society New York" class="image-219"><img src="images/Rito---Gingerblu---9-5-24---textiles--9.JPG" loading="lazy" sizes="100vw" srcset="images/Rito---Gingerblu---9-5-24---textiles--9-p-500.jpg 500w, images/Rito---Gingerblu---9-5-24---textiles--9-p-800.jpg 800w, images/Rito---Gingerblu---9-5-24---textiles--9-p-1080.jpg 1080w, images/Rito---Gingerblu---9-5-24---textiles--9-p-1600.jpg 1600w, images/Rito---Gingerblu---9-5-24---textiles--9-p-2000.jpg 2000w, images/Rito---Gingerblu---9-5-24---textiles--9-p-2600.jpg 2600w, images/Rito---Gingerblu---9-5-24---textiles--9.JPG 3000w" alt="close up of blue patterned textiles laid out on a table with a sign indicating its style and materials" class="image-219"><img src="images/Rito---Gingerblu---9-5-24---textiles--4.JPG" loading="lazy" sizes="100vw" srcset="images/Rito---Gingerblu---9-5-24---textiles--4-p-500.jpg 500w, images/Rito---Gingerblu---9-5-24---textiles--4-p-800.jpg 800w, images/Rito---Gingerblu---9-5-24---textiles--4-p-1080.jpg 1080w, images/Rito---Gingerblu---9-5-24---textiles--4-p-1600.jpg 1600w, images/Rito---Gingerblu---9-5-24---textiles--4-p-2000.jpg 2000w, images/Rito---Gingerblu---9-5-24---textiles--4-p-2600.jpg 2600w, images/Rito---Gingerblu---9-5-24---textiles--4.JPG 3000w" alt="A woman reaching out to examine textiles on a desk" class="image-219"><img src="images/Rito---Gingerblu---9-5-24---Textiles--10.jpg" loading="lazy" sizes="100vw" srcset="images/Rito---Gingerblu---9-5-24---Textiles--10-p-500.jpg 500w, images/Rito---Gingerblu---9-5-24---Textiles--10-p-800.jpg 800w, images/Rito---Gingerblu---9-5-24---Textiles--10-p-1080.jpg 1080w, images/Rito---Gingerblu---9-5-24---Textiles--10-p-1600.jpg 1600w, images/Rito---Gingerblu---9-5-24---Textiles--10-p-2000.jpg 2000w, images/Rito---Gingerblu---9-5-24---Textiles--10-p-2600.jpg 2600w, images/Rito---Gingerblu---9-5-24---Textiles--10.jpg 3000w" alt="Ajay Shrivastav&#x27;s table of textiles laid out being examined by a woman" class="image-219"><img src="images/Rito---Gingerblu---9-5-24---textiles--6.JPG" loading="lazy" sizes="100vw" srcset="images/Rito---Gingerblu---9-5-24---textiles--6-p-500.jpg 500w, images/Rito---Gingerblu---9-5-24---textiles--6-p-800.jpg 800w, images/Rito---Gingerblu---9-5-24---textiles--6-p-1080.jpg 1080w, images/Rito---Gingerblu---9-5-24---textiles--6-p-1600.jpg 1600w, images/Rito---Gingerblu---9-5-24---textiles--6-p-2000.jpg 2000w, images/Rito---Gingerblu---9-5-24---textiles--6-p-2600.jpg 2600w, images/Rito---Gingerblu---9-5-24---textiles--6.JPG 3000w" alt="a variety of patterned textiles made by Ajay Shrivastav laid out on a table with signs indicating their style and materials" class="image-219 end">
               <div class="code-embed-2 w-embed">
                 <style>
@@ -643,7 +365,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 .horizontalscroll1::-webkit-scrollbar-thumb {
     background-color: #f61718; /* Bright red thumb */
     border-radius: 30px; /* Rounded corners for the thumb */
-
 }
 /* Custom scrollbar track (the background) */
 .horizontalscroll1::-webkit-scrollbar-track {
@@ -653,19 +374,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 }
 </style>
               </div>
-            </div>
-            <div data-delay="4000" data-animation="slide" class="designer-slider w-slider" data-autoplay="false" data-easing="ease" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="3" data-duration="500" data-infinite="true">
-              <div class="w-slider-mask">
-                <div class="w-slide"></div>
-                <div class="w-slide"></div>
-              </div>
-              <div class="w-slider-arrow-left">
-                <div class="w-icon-slider-left"></div>
-              </div>
-              <div class="w-slider-arrow-right">
-                <div class="w-icon-slider-right"></div>
-              </div>
-              <div class="w-slider-nav w-round w-num"></div>
             </div>
           </div>
           <div class="poonam">
@@ -685,9 +393,30 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 </div>
               </div>
             </div>
-            <div class="horizontalscroll1 poonam">
-              <div class="div-block-108-copy"></div>
-              <div class="div-block-108"></div><img src="images/Rito---Gingerblu---9-5-24---Jewelry--2.jpg" loading="lazy" sizes="100vw" srcset="images/Rito---Gingerblu---9-5-24---Jewelry--2-p-500.jpg 500w, images/Rito---Gingerblu---9-5-24---Jewelry--2-p-800.jpg 800w, images/Rito---Gingerblu---9-5-24---Jewelry--2-p-1080.jpg 1080w, images/Rito---Gingerblu---9-5-24---Jewelry--2-p-1600.jpg 1600w, images/Rito---Gingerblu---9-5-24---Jewelry--2-p-2000.jpg 2000w, images/Rito---Gingerblu---9-5-24---Jewelry--2-p-2600.jpg 2600w, images/Rito---Gingerblu---9-5-24---Jewelry--2.jpg 3000w" alt="A table full of jewelry with people examining it" class="image-217"><img src="images/Rito---Gingerblu---9-5-24---Jewelry--12.jpg" loading="lazy" sizes="100vw" srcset="images/Rito---Gingerblu---9-5-24---Jewelry--12-p-500.jpg 500w, images/Rito---Gingerblu---9-5-24---Jewelry--12-p-800.jpg 800w, images/Rito---Gingerblu---9-5-24---Jewelry--12-p-1080.jpg 1080w, images/Rito---Gingerblu---9-5-24---Jewelry--12-p-1600.jpg 1600w, images/Rito---Gingerblu---9-5-24---Jewelry--12-p-2000.jpg 2000w, images/Rito---Gingerblu---9-5-24---Jewelry--12-p-2600.jpg 2600w, images/Rito---Gingerblu---9-5-24---Jewelry--12.jpg 3000w" alt="close up side profile of two models facing the left side with earring tapestry being prominently highlighted" class="image-217"><img src="images/Rito---Gingerblu---9-5-24---Jewelry--14.jpg" loading="lazy" sizes="100vw" srcset="images/Rito---Gingerblu---9-5-24---Jewelry--14-p-500.jpg 500w, images/Rito---Gingerblu---9-5-24---Jewelry--14-p-800.jpg 800w, images/Rito---Gingerblu---9-5-24---Jewelry--14-p-1080.jpg 1080w, images/Rito---Gingerblu---9-5-24---Jewelry--14-p-1600.jpg 1600w, images/Rito---Gingerblu---9-5-24---Jewelry--14.jpg 2000w" alt="Close up side profile of a female model adorning large Indian style earrings" class="image-217 portrait"><img src="images/Rito---Gingerblu---9-5-24---Jewelry--11.jpg" loading="lazy" sizes="100vw" srcset="images/Rito---Gingerblu---9-5-24---Jewelry--11-p-500.jpg 500w, images/Rito---Gingerblu---9-5-24---Jewelry--11-p-800.jpg 800w, images/Rito---Gingerblu---9-5-24---Jewelry--11-p-1080.jpg 1080w, images/Rito---Gingerblu---9-5-24---Jewelry--11-p-1600.jpg 1600w, images/Rito---Gingerblu---9-5-24---Jewelry--11.jpg 2000w" alt="Sideview close up a female model and blonde hair wearing large decorative green earrings" class="image-217 portrait"><img src="images/Rito---Gingerblu---9-5-24---Jewelry--9.jpg" loading="lazy" sizes="100vw" srcset="images/Rito---Gingerblu---9-5-24---Jewelry--9-p-500.jpg 500w, images/Rito---Gingerblu---9-5-24---Jewelry--9-p-800.jpg 800w, images/Rito---Gingerblu---9-5-24---Jewelry--9-p-1080.jpg 1080w, images/Rito---Gingerblu---9-5-24---Jewelry--9-p-1600.jpg 1600w, images/Rito---Gingerblu---9-5-24---Jewelry--9.jpg 2000w" alt="Close up an Asian woman with red lipstick and blonde hair wearing large decorative green earrings made by Maalicious jewelry" class="image-217 portrait"><img src="images/Rito---Gingerblu---9-5-24---Jewelry--5.jpg" loading="lazy" sizes="100vw" srcset="images/Rito---Gingerblu---9-5-24---Jewelry--5-p-500.jpg 500w, images/Rito---Gingerblu---9-5-24---Jewelry--5-p-800.jpg 800w, images/Rito---Gingerblu---9-5-24---Jewelry--5-p-1080.jpg 1080w, images/Rito---Gingerblu---9-5-24---Jewelry--5-p-1600.jpg 1600w, images/Rito---Gingerblu---9-5-24---Jewelry--5-p-2000.jpg 2000w, images/Rito---Gingerblu---9-5-24---Jewelry--5-p-2600.jpg 2600w, images/Rito---Gingerblu---9-5-24---Jewelry--5.jpg 3000w" alt="Close up side profile of a woman wearing large blue decorative earring made by Maalicious jewelry" class="image-217 end">
+            <div class="horizontalscroll1 ajay">
+              <div class="div-block-110"></div><img src="images/Rito---Gingerblu---9-5-24---Jewelry--1.jpg" loading="lazy" sizes="100vw" srcset="images/Rito---Gingerblu---9-5-24---Jewelry--1-p-500.jpg 500w, images/Rito---Gingerblu---9-5-24---Jewelry--1-p-800.jpg 800w, images/Rito---Gingerblu---9-5-24---Jewelry--1-p-1080.jpg 1080w, images/Rito---Gingerblu---9-5-24---Jewelry--1-p-1600.jpg 1600w, images/Rito---Gingerblu---9-5-24---Jewelry--1-p-2000.jpg 2000w, images/Rito---Gingerblu---9-5-24---Jewelry--1-p-2600.jpg 2600w, images/Rito---Gingerblu---9-5-24---Jewelry--1.jpg 3000w" alt="A table full of jewelry with people examining particular items" class="image-219"><img src="images/Rito---Gingerblu---9-5-24---Jewelry--5.jpg" loading="lazy" sizes="100vw" srcset="images/Rito---Gingerblu---9-5-24---Jewelry--5-p-500.jpg 500w, images/Rito---Gingerblu---9-5-24---Jewelry--5-p-800.jpg 800w, images/Rito---Gingerblu---9-5-24---Jewelry--5-p-1080.jpg 1080w, images/Rito---Gingerblu---9-5-24---Jewelry--5-p-1600.jpg 1600w, images/Rito---Gingerblu---9-5-24---Jewelry--5-p-2000.jpg 2000w, images/Rito---Gingerblu---9-5-24---Jewelry--5-p-2600.jpg 2600w, images/Rito---Gingerblu---9-5-24---Jewelry--5.jpg 3000w" alt="Close up side profile of a woman wearing large blue decorative earring made by Maalicious jewelry" class="image-219"><img src="images/Rito---Gingerblu---9-5-24---Jewelry--12.jpg" loading="lazy" sizes="100vw" srcset="images/Rito---Gingerblu---9-5-24---Jewelry--12-p-500.jpg 500w, images/Rito---Gingerblu---9-5-24---Jewelry--12-p-800.jpg 800w, images/Rito---Gingerblu---9-5-24---Jewelry--12-p-1080.jpg 1080w, images/Rito---Gingerblu---9-5-24---Jewelry--12-p-1600.jpg 1600w, images/Rito---Gingerblu---9-5-24---Jewelry--12-p-2000.jpg 2000w, images/Rito---Gingerblu---9-5-24---Jewelry--12-p-2600.jpg 2600w, images/Rito---Gingerblu---9-5-24---Jewelry--12.jpg 3000w" alt="close up side profile of two models facing the left side with earring tapestry being prominently highlighted" class="image-219"><img src="images/Rito---Gingerblu---9-5-24---Jewelry--11.jpg" loading="lazy" sizes="(max-width: 767px) 100vw, 460px" srcset="images/Rito---Gingerblu---9-5-24---Jewelry--11-p-500.jpg 500w, images/Rito---Gingerblu---9-5-24---Jewelry--11-p-800.jpg 800w, images/Rito---Gingerblu---9-5-24---Jewelry--11-p-1080.jpg 1080w, images/Rito---Gingerblu---9-5-24---Jewelry--11-p-1600.jpg 1600w, images/Rito---Gingerblu---9-5-24---Jewelry--11.jpg 2000w" alt="Sideview close up a female model and blonde hair wearing large decorative green earrings" class="image-219">
+              <div class="code-embed-2 w-embed">
+                <style>
+.horizontalscroll1 {
+    overflow-y: hidden; /* Prevent vertical scrolling */
+}
+/* WebKit-based browsers (Chrome, Safari, Edge) */
+.horizontalscroll1::-webkit-scrollbar {
+    height: 10px; /* Minimal height for horizontal scrollbar */
+}
+/* Custom scrollbar thumb (the draggable part) */
+.horizontalscroll1::-webkit-scrollbar-thumb {
+    background-color: #f61718; /* Bright red thumb */
+    border-radius: 30px; /* Rounded corners for the thumb */
+}
+/* Custom scrollbar track (the background) */
+.horizontalscroll1::-webkit-scrollbar-track {
+    background-color: transparent; /* Transparent background */
+    border: 2px solid white; /* White borders */
+    border-radius: 30px; /* Rounded corners for the track */
+}
+</style>
+              </div>
             </div>
           </div>
         </section>
@@ -911,26 +640,26 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   <div class="footer-space"></div>
   <footer class="footer-wrap">
     <nav id="w-node-d15eb6b8-3e70-6e83-9f7a-e78fc452a14a-c452a147" class="footer-links-2">
-      <a href="https://ritography.com/terms-of-service" class="link-7">Terms of Service</a>
-      <a href="https://ritography.com/privacy-policy" class="link-7">Privacy Policy</a>
+      <a href="terms-of-service.html" class="link-7">Terms of Service</a>
+      <a href="privacy-policy.html" class="link-7">Privacy Policy</a>
     </nav>
     <p id="w-node-d15eb6b8-3e70-6e83-9f7a-e78fc452a14f-c452a147" class="paragraph-12">All rights reserved (C) | 2024</p>
-    <a id="w-node-_4ce54689-1d90-8ef7-3359-d4577201e4dd-c452a147" href="https://ritography.com" class="logo-link-block w-inline-block"><img src="images/ritography-logo-small-tm.png" loading="lazy" id="w-node-eafbdfaf-77b6-be28-3c9c-e2fa02686ad4-c452a147" sizes="(max-width: 479px) 88vw, (max-width: 767px) 30vw, 200px" alt="Ritography logo with red text and trademark symbol" srcset="images/ritography-logo-small-tm-p-500.png 500w, images/ritography-logo-small-tm-p-800.png 800w, images/ritography-logo-small-tm-p-1080.png 1080w, images/ritography-logo-small-tm-p-1600.png 1600w, images/ritography-logo-small-tm.png 1796w" class="image-90"></a>
+    <a id="w-node-_4ce54689-1d90-8ef7-3359-d4577201e4dd-c452a147" href="index.html" class="logo-link-block w-inline-block"><img src="images/ritography-logo-small-tm.png" loading="lazy" id="w-node-eafbdfaf-77b6-be28-3c9c-e2fa02686ad4-c452a147" sizes="(max-width: 479px) 88vw, (max-width: 767px) 30vw, 200px" alt="Ritography logo with red text and trademark symbol" srcset="images/ritography-logo-small-tm-p-500.png 500w, images/ritography-logo-small-tm-p-800.png 800w, images/ritography-logo-small-tm-p-1080.png 1080w, images/ritography-logo-small-tm-p-1600.png 1600w, images/ritography-logo-small-tm.png 1796w" class="image-90"></a>
     <nav id="w-node-d15eb6b8-3e70-6e83-9f7a-e78fc452a154-c452a147" class="footer-links">
       <a href="https://www.modelmayhem.com/4327669" target="_blank" class="footer-item">ModelMayhem</a>
       <a href="https://instagram.com/ritorhymes" target="_blank" class="footer-item">Instagram</a>
       <a href="https://x.com/rito_rhymes" target="_blank" class="footer-item">Twitter</a>
     </nav>
-    <a id="w-node-d15eb6b8-3e70-6e83-9f7a-e78fc452a15b-c452a147" href="https://ritography.com/contact" class="button-3 button-7 w-button">Contact</a>
+    <a id="w-node-d15eb6b8-3e70-6e83-9f7a-e78fc452a15b-c452a147" href="contact.html" class="button-3 button-7 w-button">Contact</a>
     <div id="w-node-_705ff163-9ea3-adf7-dd70-28a0ef09098a-c452a147" data-w-id="705ff163-9ea3-adf7-dd70-28a0ef09098a" class="icon-3-copy w-icon-nav-menu"></div>
     <nav id="w-node-b912581e-502a-a02b-7d95-f3619dac4cae-c452a147" class="footer-menu">
       <div class="div-block-101">
         <div class="mobile-items"><img data-w-id="b912581e-502a-a02b-7d95-f3619dac4cb1" id="w-node-b912581e-502a-a02b-7d95-f3619dac4cb1-c452a147" alt="" src="https://cdn.prod.website-files.com/66c5bd247bbcc549e247711a/66c814c1336539dcc14a1efe_white%20x%20agency%20fb.png" loading="lazy" class="image-204">
-          <a href="https://ritography.com" class="mobile-menu-buttons w-button">Home</a>
-          <a href="https://ritography.com/video" class="mobile-menu-buttons w-button">Video</a>
-          <a href="https://ritography.com/modeling" class="mobile-menu-buttons w-button">Modeling</a>
-          <a href="https://ritography.com/photography-samples" class="mobile-menu-buttons w-button">Photography</a>
-          <a href="https://ritography.com/about" class="mobile-menu-buttons w-button">About</a>
+          <a href="index.html" class="mobile-menu-buttons w-button">Home</a>
+          <a href="video.html" class="mobile-menu-buttons w-button">Video</a>
+          <a href="modeling.html" class="mobile-menu-buttons w-button">Modeling</a>
+          <a href="photography-samples.html" class="mobile-menu-buttons w-button">Photography</a>
+          <a href="about.html" class="mobile-menu-buttons w-button">About</a>
           <div data-delay="0" data-hover="true" class="dropdown-2 w-dropdown">
             <div class="dropdown-cobrand-1 w-dropdown-toggle">
               <div class="icon-9-copy w-icon-dropdown-toggle"></div>
