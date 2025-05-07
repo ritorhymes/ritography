@@ -1,3 +1,51 @@
+@font-face {
+  font-family: Staatliches;
+  src: url('../fonts/Staatliches-Regular.ttf') format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Unique;
+  src: url('../fonts/Unique.ttf') format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Nexa;
+  src: url('../fonts/Nexa-Light.otf') format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Nexa;
+  src: url('../fonts/Nexa-Bold.otf') format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Ethnocentric Rg It;
+  src: url('../fonts/ethnocentric-rg-it.otf') format("opentype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Ethnocentric Rg;
+  src: url('../fonts/ethnocentric-rg.otf') format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --white: white;
   --black: black;
@@ -3826,6 +3874,7 @@ figcaption {
 
 .paragraph-28 {
   color: #fff;
+  margin-bottom: 10%;
   padding-left: 15%;
   padding-right: 15%;
 }
@@ -4533,7 +4582,6 @@ figcaption {
 }
 
 .flipcard-front {
-  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   color: #fff;
   cursor: pointer;
@@ -4550,7 +4598,6 @@ figcaption {
 }
 
 .flipcard-back {
-  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   cursor: pointer;
   transform-style: preserve-3d;
@@ -4631,7 +4678,6 @@ figcaption {
 }
 
 .flipcard-front-copy {
-  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   color: #fff;
   cursor: pointer;
@@ -4648,7 +4694,6 @@ figcaption {
 }
 
 .flipcard-back-copy {
-  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   cursor: pointer;
   transform-style: preserve-3d;
@@ -5254,7 +5299,7 @@ figcaption {
 }
 
 .div-block-73-copy-copy:hover {
-  background-color: #fff;
+  background-color: #fff0;
 }
 
 .text-block-44-copy {
@@ -5333,7 +5378,7 @@ figcaption {
 }
 
 .div-block-73-copy:hover {
-  background-color: #fff;
+  background-color: #fff0;
 }
 
 .mobile-items {
@@ -5447,6 +5492,11 @@ figcaption {
 
 .image-205 {
   opacity: 1;
+  transition: all .2s;
+}
+
+.image-205:hover {
+  transform: scale(.9);
 }
 
 .dropdown-cobrand-g2 {
@@ -5461,7 +5511,7 @@ figcaption {
   grid-row-gap: 21px;
   justify-content: center;
   align-items: center;
-  display: flex;
+  display: none;
   position: static;
   left: -129px;
 }
@@ -6131,7 +6181,6 @@ figcaption {
 .div-block-106 {
   grid-column-gap: 42px;
   grid-row-gap: 42px;
-  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   transform-style: preserve-3d;
   background-color: #000;
@@ -6182,7 +6231,6 @@ figcaption {
 }
 
 .ajay-flipcard {
-  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   color: #fff;
   cursor: pointer;
@@ -6198,7 +6246,6 @@ figcaption {
 }
 
 .ajay-flipcard-2 {
-  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   cursor: pointer;
   transform-style: preserve-3d;
@@ -6241,7 +6288,6 @@ figcaption {
 }
 
 .poonam-flipcard {
-  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   color: #fff;
   cursor: pointer;
@@ -6258,7 +6304,6 @@ figcaption {
 }
 
 .poonam-flipcard-2 {
-  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   cursor: pointer;
   transform-style: preserve-3d;
@@ -6304,7 +6349,6 @@ figcaption {
 .div-block-106-copy {
   grid-column-gap: 42px;
   grid-row-gap: 42px;
-  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   transform-style: preserve-3d;
   background-color: #fff;
@@ -6772,7 +6816,6 @@ figcaption {
 }
 
 .flipcard-front-prep {
-  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   color: #fff;
   cursor: pointer;
@@ -6790,7 +6833,6 @@ figcaption {
 }
 
 .flipcard-back-prep {
-  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   cursor: pointer;
   transform-style: preserve-3d;
@@ -8501,6 +8543,31 @@ figcaption {
   padding-bottom: 0;
 }
 
+.cobrand-static {
+  align-self: center;
+  margin-left: 0;
+  margin-right: 0;
+  display: none;
+}
+
+.slider-11-copy {
+  background-color: #ddd0;
+  width: 80%;
+  height: auto;
+  margin-bottom: 5%;
+  margin-left: auto;
+  margin-right: auto;
+  display: none;
+}
+
+.image-289 {
+  transition: all .2s;
+}
+
+.image-289:hover {
+  transform: scale(.9);
+}
+
 @media screen and (max-width: 991px) {
   .styleguide-block {
     text-align: center;
@@ -8952,7 +9019,7 @@ figcaption {
     grid-row-gap: 0px;
     flex-flow: column;
     align-self: flex-start;
-    margin-top: 20%;
+    margin-top: 10%;
     margin-bottom: 0;
     margin-left: 0;
     position: relative;
@@ -9251,8 +9318,16 @@ figcaption {
     width: 150px;
   }
 
+  .div-block-73-copy-copy:hover {
+    background-color: #fff0;
+  }
+
   .div-block-73-copy {
-    width: auto;
+    width: 200px;
+  }
+
+  .div-block-73-copy:hover {
+    background-color: #fff0;
   }
 
   .icon-3-copy {
@@ -9284,14 +9359,17 @@ figcaption {
     margin-top: 15px;
     margin-left: auto;
     margin-right: auto;
-    display: block;
+    display: none;
   }
 
   .div-block-102-g2 {
-    flex-flow: row;
+    flex-flow: column;
     justify-content: center;
     align-self: center;
+    align-items: center;
     width: 400px;
+    margin-top: 2.5%;
+    display: flex;
   }
 
   .dropdown-list-g-1.w--open {
@@ -9698,6 +9776,21 @@ figcaption {
     margin-left: auto;
     margin-right: auto;
     padding-bottom: 0;
+  }
+
+  .cobrand-static {
+    margin-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+
+  .text-block-23 {
+    text-decoration: underline;
+  }
+
+  .slider-11-copy {
+    margin-bottom: 20%;
   }
 }
 
@@ -11120,7 +11213,7 @@ figcaption {
     border-bottom-left-radius: 40px;
     align-self: flex-end;
     width: 100%;
-    height: 85vh;
+    height: 90vh;
     position: fixed;
     inset: 0% auto 0% 0%;
   }
@@ -11799,7 +11892,7 @@ figcaption {
 
   .image-90 {
     margin-top: 5px;
-    margin-left: auto;
+    margin-left: 10%;
     margin-right: auto;
   }
 
@@ -12161,6 +12254,10 @@ figcaption {
     width: 150px;
   }
 
+  .div-block-73-copy-copy:hover {
+    background-color: #fff0;
+  }
+
   .mobile-menu-buttons, .mobile-menu-buttons.w--current {
     border-width: 1px;
     height: 40px;
@@ -12176,6 +12273,10 @@ figcaption {
 
   .div-block-73-copy {
     width: 150px;
+  }
+
+  .div-block-73-copy:hover {
+    background-color: #fff0;
   }
 
   .mobile-items {
@@ -12205,7 +12306,7 @@ figcaption {
     border-width: 0;
     order: 1;
     margin-left: auto;
-    margin-right: auto;
+    margin-right: 2.5%;
   }
 
   .dropdown-cobrand-g1 {
@@ -12227,6 +12328,10 @@ figcaption {
     width: 130px;
   }
 
+  .dropdown-cobrand-g1.w--open:hover {
+    background-color: #f6171800;
+  }
+
   .text-block-44-g {
     padding: 0;
   }
@@ -12243,6 +12348,7 @@ figcaption {
     margin-top: 19px;
     margin-left: auto;
     margin-right: auto;
+    display: none;
   }
 
   .div-block-102-g2 {
@@ -13273,7 +13379,40 @@ figcaption {
   }
 
   .logo-link-block.w--current {
+    margin-left: 25%;
+    margin-right: 0;
+  }
+
+  .list-2 {
+    grid-column-gap: 76px;
+    grid-row-gap: 76px;
+    flex-flow: column;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    display: flex;
+  }
+
+  .link-block-156 {
+    margin-left: 10%;
+    margin-right: auto;
+  }
+
+  .cobrand-static {
+    margin-top: 19px;
     margin-left: auto;
+    margin-right: auto;
+    text-decoration: underline;
+  }
+
+  .text-block-23 {
+    margin-top: 15%;
+    font-size: 20px;
+    text-decoration: underline;
+  }
+
+  .slider-11-copy {
+    width: 100%;
+    margin-bottom: 50%;
   }
 }
 
@@ -13289,10 +13428,6 @@ figcaption {
 #w-node-d15eb6b8-3e70-6e83-9f7a-e78fc452a14f-c452a147 {
   grid-area: 2 / 2 / 3 / 3;
   justify-self: center;
-}
-
-#w-node-_4ce54689-1d90-8ef7-3359-d4577201e4dd-c452a147 {
-  grid-area: Area;
 }
 
 #w-node-d15eb6b8-3e70-6e83-9f7a-e78fc452a154-c452a147 {
@@ -13398,10 +13533,6 @@ figcaption {
 
 #w-node-_1452d373-70e4-b36e-d4e3-aec2f0733499-67bb6283, #w-node-_6194b98c-8c1a-868d-20f9-f2de70da8f56-67bb6283, #w-node-e609e993-1816-1ae6-578a-21f57c111149-67bb6283, #w-node-_0e1c42d8-7fdc-4320-aedc-17a1999eb8c9-67bb6283 {
   grid-area: span 1 / span 1 / span 1 / span 1;
-}
-
-#w-node-_040f665a-4a15-5c29-9110-605fe3412b7b-67bb6284 {
-  place-self: center;
 }
 
 #w-node-_040f665a-4a15-5c29-9110-605fe3412b7c-67bb6284 {
